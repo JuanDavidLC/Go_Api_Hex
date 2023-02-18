@@ -2,7 +2,6 @@ package adapters
 
 import (
 	"database/sql"
-	"log"
 
 	"github.com/JuanDavidLC/Go_Api_Hex/domain/models"
 )
@@ -82,7 +81,7 @@ func (repo UserPostgresRepository) GetById(id int64) (models.User, error) {
 
 	err := row.Scan(&user.Id_User, &user.Name, &user.Last_name)
 	if err != nil {
-		log.Fatal(err)
+
 		return models.User{}, err
 	}
 
